@@ -1,0 +1,39 @@
+NOKIA 5110 GAME CONSOLE POR
+by Nick Frangos (2019)
+
+[X] 1. NOKIA 5110 LCD DRIVER
+[X] 	a. Display commands
+[X] 	b. Draw pixel
+[X] 	c. Fill Screen
+[X] 	d. Draw chkrbrd
+[X] 	e. Draw chars
+[X] 	f. Build display map data structure
+[X] 	g. Draw lines
+[X] 	h. Draw rectangles
+[ ] 	i. Store char map in EEPROM
+
+[ ] 2. AVR Timer Driver
+[ ] 	a. Use timer ISR to call function pointer
+
+[ ] 3. Snake Game
+[X] 	a. Build snake body data-structure
+[X] 	b. Add and delete segments
+[X] 	c. Grow and move body
+[X] 	d. Reset upon contacting body segment or OoB
+[X] 	e. Change direction
+[ ] 	f. Place apple in random location
+[ ] 	g. User input from push-button GPIO
+[ ] 	h. Use timer to update game status
+[ ] 	i. Generate menu system
+[ ] 	i. Debug why game freezes after ~2mins of uptime - possible memory leak
+
+[ ] 4. Breakout Game
+[ ] 	a. Still under development
+
+[ ] 5. Galaga Game
+[ ] 	a. Still under development
+
+[ ] 6. Design PCB
+[ ] 	a. Build perfboard controller
+[ ] 	b. Test 3.3V operation at 8MHz
+[ ] 	c. Still under development
