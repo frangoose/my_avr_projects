@@ -23,11 +23,7 @@ SOURCES    = blink.c
 
 #RULES
 .PHONY: all
-all: flash
-
-.PHONY: flash
-flash: $(TARGET).hex
-	avrdude -c $(PROGRAMMER) -p $(MCU) -U flash:w:$(TARGET).hex
+all: $(TARGET).hex
 
 %.hex: $(ELF)
 	$(OBJCOPY) -j .text -j .data -O ihex $< $@
@@ -36,11 +32,15 @@ $(ELF): $(OBJECTS)
 	$(CC) $(LDFLAGS) $^ -o $@
 
 $(OBJECTS): $(SOURCES)
-	$(CC) $(CFLAGS) -c $^ -o $@
+	$(CC) $(CFLAGS) -c $^
 
 .PHONY: dump
 dump:
 	avr-objdump -S $(OBJECTS) > $(OBJECTS).dump
+
+.PHONY: flash
+flash: $(TARGET).hex
+	avrdude -c $(PROGRAMMER) -p $(MCU) -U flash:w:$(TARGET).hex
 
 .PHONY: clean
 clean:

@@ -1,0 +1,34 @@
+main.c
++ init(void);
+    - init timer
+    - init display
+- Handle state transitions
+- Handle ISRs
+
+timer.h
+- uint16 timer_count;
++ timer_init(void);
+    - setup hardware timers
++ timer_clear_count(void);
+    set timer_count variable to 0
++ timer_update_count(void);
+    increment timer_count variable by 1
+
+states.h
+- State0: Idle
+    - while start==0, Idle state
+    - start is toggled by button press ISR
+- State1: Update Count
+    - call function timer_update_count
+    - triggered by timer ISR
+- State2: Update Display
+    - call TM1634 functions to update display with timer_count value displayed
+
+buzzer.h
++ (all functions written to use 8-bit hardware timer to driver buzzer)
+
+tones.h
++ (all functions written for 8-bit hardware timer buzzer tone frequencies)
+
+TM1634.h
++ (all functions written to handle 7 seg display)
