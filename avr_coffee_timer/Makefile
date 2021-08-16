@@ -18,8 +18,8 @@ LDFLAGS   += -Wl,--gc-sections -mmcu=$(MCU)
 #PROJECT
 TARGET     = coffee_timer
 ELF        = $(TARGET).elf
-OBJECTS    = main.o
-SOURCES    = main.c
+OBJECTS    = main.o TM1637.o
+SOURCES    = main.c TM1637.c
 
 #RULES
 .PHONY: all
